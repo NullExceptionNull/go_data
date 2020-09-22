@@ -32,7 +32,7 @@ func (a *Array) IsEmpty() bool {
 //向所有元素的最后添加一个元素
 //func (a *Array) AddLast(e int) {
 //	if a.size == len(a.data) {
-//		panic("add failed,array is full")
+//		panic("add failed,02-array is full")
 //	}
 //	a.data[a.size] = e
 //	a.size++
@@ -50,7 +50,7 @@ func (a *Array) AddFirst(e int) {
 
 func (a *Array) Add(index int, e int) {
 	if a.size == len(a.data) {
-		panic("add failed,array is full")
+		panic("add failed,02-array is full")
 	}
 	if index < 0 || index > a.size {
 		panic("add failed, index out of range")

@@ -1,7 +1,7 @@
 package main
 
 import (
-	array2 "data_structrue/array/query_and_update_element/array"
+	array2 "data_structrue/02-array/query_and_update_element/array"
 	"fmt"
 )
 

@@ -37,7 +37,7 @@ func (a *Array) IsEmpty() bool {
 
 func (a *Array) Add(index int, e interface{}) {
 	if a.size == len(a.data) {
-		panic("add failed .array is full")
+		panic("add failed .02-array is full")
 	}
 	if index < 0 || index > a.size {
 		panic("add failed,index out of range")
