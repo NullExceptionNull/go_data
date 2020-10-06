@@ -68,7 +68,6 @@ func (a *LoopQueue) GetFront() interface{} {
 	if a.IsEmpty() {
 		panic("Queue is empty")
 	}
-
 	return a.Data[a.Front]
 }
 
