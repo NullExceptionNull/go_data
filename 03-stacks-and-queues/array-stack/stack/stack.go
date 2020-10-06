@@ -2,7 +2,7 @@ package stack
 
 import (
 	"bytes"
-	"data_structrue/03-stacks-and-queues/Array-stack/array"
+	"data_structrue/02-array/dynamic_array/array"
 	"fmt"
 )
 

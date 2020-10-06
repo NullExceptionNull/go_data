@@ -1,23 +1,21 @@
 package main
 
 import (
-	array2 "data_structrue/03-stacks-and-queues/Array-stack/array"
+	"data_structrue/02-array/dynamic_array/array"
 	"fmt"
 )
 
 func main() {
-	array := array2.New(10)
+	a := array.New(2)
 
-	for i := 0; i < 10; i++ {
-		array.AddLast(i)
+	for i := 0; i < 2; i++ {
+		a.Add(i, i)
 	}
-	fmt.Println(array)
-	array.AddLast("11")
-	fmt.Println(array)
-	array.RemoveLast()
-	array.RemoveLast()
-	array.RemoveLast()
 
-	fmt.Println(array)
+	fmt.Println(a.String())
+
+	a.Remove(1)
+
+	fmt.Println(a.String())
 
 }

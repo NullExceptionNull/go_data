@@ -1,4 +1,4 @@
-package Array_stack
+package array_stack
 
 type Stack interface {
 	GetSize() int
