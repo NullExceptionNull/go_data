@@ -1,5 +1,11 @@
 package _2_BST_recusion
 
+import (
+	"bytes"
+	"fmt"
+	"strconv"
+)
+
 type Node struct {
 	e     int
 	left  *Node
@@ -13,6 +19,12 @@ func NewNode(e int) *Node {
 type BST struct {
 	root *Node
 	size int
+}
+
+func (b *BST) String() string {
+	var buffer = bytes.NewBufferString("")
+	generateBSTString(b.root, 0, buffer)
+	return buffer.String()
 }
 
 func NewBST() *BST {
@@ -60,4 +72,36 @@ func (b *BST) contains(node *Node, e int) bool {
 		return b.contains(node.right, e)
 	}
 	return false
+}
+
+func (b *BST) PreOrder() {
+	b.preOrder(b.root)
+}
+
+func (b *BST) preOrder(node *Node) {
+	if node == nil {
+		return
+	}
+	fmt.Println(node.e)
+	b.preOrder(node.left)
+	b.preOrder(node.right)
+}
+
+func generateBSTString(node *Node, dept int, buffer *bytes.Buffer) {
+	if node == nil {
+		buffer.WriteString(generateDeptString(dept) + "NULL\n")
+		return
+	}
+	buffer.WriteString(generateDeptString(dept) + strconv.Itoa(node.e) + "\n")
+	generateBSTString(node.left, dept+1, buffer)
+	generateBSTString(node.right, dept+1, buffer)
+}
+
+func generateDeptString(dept int) string {
+	var buffer = bytes.NewBufferString("")
+
+	for i := 0; i < dept; i++ {
+		buffer.WriteString("--")
+	}
+	return buffer.String()
 }
