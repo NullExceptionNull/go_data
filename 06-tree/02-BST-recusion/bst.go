@@ -87,6 +87,19 @@ func (b *BST) preOrder(node *Node) {
 	b.preOrder(node.right)
 }
 
+func (b *BST) InnerOrder() {
+	b.preOrder(b.root)
+}
+
+func (b *BST) innerOrder(node *Node) {
+	if node == nil {
+		return
+	}
+	b.innerOrder(node.left)
+	fmt.Println(node.e)
+	b.innerOrder(node.right)
+}
+
 func generateBSTString(node *Node, dept int, buffer *bytes.Buffer) {
 	if node == nil {
 		buffer.WriteString(generateDeptString(dept) + "NULL\n")
