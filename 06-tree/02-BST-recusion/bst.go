@@ -100,6 +100,36 @@ func (b *BST) innerOrder(node *Node) {
 	b.innerOrder(node.right)
 }
 
+func (b *BST) GetMin() *Node {
+	return getMin(b.root)
+}
+
+func getMin(node *Node) *Node {
+	if node.left == nil {
+		return node
+	}
+	return getMin(node.left)
+}
+
+func (b *BST) GetMax() *Node {
+	return getMax(b.root)
+}
+
+func getMax(node *Node) *Node {
+	if node.right == nil {
+		return node
+	}
+	return getMax(node.right)
+}
+
+//func (b *BST) DeleteMin() *Node {
+//	//首先找到最小的节点
+//	min := b.GetMin()
+//	//然后判断他是不是叶子结点 如果他是叶子节点
+//	deleteMin(b.root)
+//	return min
+//}
+
 func generateBSTString(node *Node, dept int, buffer *bytes.Buffer) {
 	if node == nil {
 		buffer.WriteString(generateDeptString(dept) + "NULL\n")
